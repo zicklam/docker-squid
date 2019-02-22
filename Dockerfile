@@ -6,7 +6,7 @@ MAINTAINER Florian Zicklam <docker-main@florianzicklam.de>
 # http://dl-3.alpinelinux.org/alpine/v3.9/main/x86_64/
 
 # We are using squid version 4.4 now in alpine 3.9
-ENV SQUID_VERSION=4.4-r1
+ENV SQUID_VERSION=4.4-r1 \
     SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_USER=squid \
 	SQUID_GROUP=squid
