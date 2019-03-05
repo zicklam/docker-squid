@@ -1,17 +1,18 @@
 ---
-version: '3.6'
+version: '2.1'
 services:
 
   proxy:
     image: zicklam/squid:latest
     container_name: squid
-    deploy:
-      replicas: 1
-      resources:
-        limits:
-          memory: 512M
+    mem_limit: 512M
     ports: 
       - "3128:3128"
     restart: always 
-    environment:
-      - HOSTNAME=demosys
+    cap_drop:
+      - NET_ADMIN
+      - SYS_ADMIN
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
