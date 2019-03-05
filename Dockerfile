@@ -1,6 +1,6 @@
 FROM zicklam/base:3.9-alpine
 
-MAINTAINER Florian Zicklam <docker-main@florianzicklam.de>
+LABEL maintainer="docker-main@florianzicklam.de"
 
 # alpinelinux 3.9 repo content:
 # http://dl-3.alpinelinux.org/alpine/v3.9/main/x86_64/
@@ -9,7 +9,7 @@ MAINTAINER Florian Zicklam <docker-main@florianzicklam.de>
 ENV SQUID_VERSION=4.4-r1 \
     SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_USER=squid \
-	SQUID_GROUP=squid
+    SQUID_GROUP=squid
 
 RUN apk update \
  && apk add squid=${SQUID_VERSION} squid-lang-de=${SQUID_VERSION} \
